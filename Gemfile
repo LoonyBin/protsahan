@@ -7,6 +7,10 @@ gem 'rails', '3.1.0.rc4'
 
 gem 'sqlite3'
 
+gem 'haml-rails'
+gem 'compass'
+gem 'simple_form'
+
 # Asset template engines
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
@@ -14,6 +18,18 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+gem 'paper_trail'
+gem 'inherited_resources'
+
+group :test, :development do
+  gem "rspec"
+  gem "rspec-rails"
+  gem "remarkable_activerecord"
+  gem 'steak'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'factory_girl_generator'
+end
 # Use unicorn as the web server
 # gem 'unicorn'
 

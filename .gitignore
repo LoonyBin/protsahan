@@ -3,3 +3,8 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
+
+*~
+*.swp
+
+/config/database.yml
