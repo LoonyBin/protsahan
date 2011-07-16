@@ -20,6 +20,9 @@ gem 'jquery-rails'
 
 gem 'paper_trail'
 gem 'inherited_resources'
+gem 'rmagick'
+gem "carrierwave"
+
 
 group :test, :development do
   gem "rspec"
