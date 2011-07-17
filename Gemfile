@@ -5,8 +5,6 @@ gem 'rails', '3.1.0.rc4'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'haml-rails'
 gem 'compass'
 gem 'simple_form'
@@ -25,6 +23,8 @@ gem "carrierwave"
 
 
 group :test, :development do
+  gem 'sqlite3'
+
   gem "rspec"
   gem "rspec-rails"
   gem "remarkable_activerecord"
@@ -42,3 +42,7 @@ end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# This is for heroku
+#group :production do
+#  gem 'therubyracer-heroku',  '0.8.1.pre3'
+#end
