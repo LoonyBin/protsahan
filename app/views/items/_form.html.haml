@@ -1,16 +1,13 @@
-= simple_form_for(@item) do |f|
+= simple_form_for @item, :html => { :multipart => true } do |f|
   = f.error_notification
 
   .inputs
-
     = f.input :name
-
     = f.input :description
-
-    = f.input :image
-
+    %fieldset.image
+      = f.input :image
+      = f.input :remote_image_url
     = f.input :price
-
 
   .actions
     = f.button :submit
