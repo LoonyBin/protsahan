@@ -43,6 +43,6 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # This is for heroku
-#group :production do
-#  gem 'therubyracer-heroku',  '0.8.1.pre3'
-#end
+group :production do
+  gem 'therubyracer-heroku',  '0.8.1.pre3'
+end
