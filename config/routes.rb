@@ -1,4 +1,6 @@
 Protsahan::Application.routes.draw do
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :items
 
   # The priority is based upon order of creation:
