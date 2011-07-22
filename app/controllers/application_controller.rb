@@ -8,4 +8,12 @@ private
   end
   helper_method :current_user
 
+  # TODO: create more controlled authorization
+  def authenticate
+    unless current_user
+      session[:redirected_from] = request.env['PATH_INFO']
+      redirect_to new_session_url
+      return false
+    end
+  end
 end
