@@ -6,10 +6,10 @@
       %li.item
         .image=image_tag item.image_url(:thumb) if item.image?
         .name= item.name
-        .price Rs.#{item.price}
+        .price &#8377; #{item.price}
         .actions
-          = link_to 'Edit', edit_item_path(item)
-          = link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
+          = button_to 'Edit', edit_item_path(item), :method => :get
+          = button_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
 .clear
 
-= link_to 'New Item', new_item_path
+= button_to 'New Item', new_item_path, :method => :get
