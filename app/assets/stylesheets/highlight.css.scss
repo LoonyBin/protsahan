@@ -1,0 +1,15 @@
+@import "compass/css3/background-clip";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
+@import "compass/css3/box-shadow";
+
+@mixin highlight($color: white, $border-color: $default-box-shadow-color) {
+    @include background-clip;
+    @include border-radius;
+    @include box-sizing(border-box);
+    @include single-box-shadow($border-color, $inset: inset);
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: rgba($color, 0.6);
+}

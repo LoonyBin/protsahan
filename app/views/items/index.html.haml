@@ -1,6 +1,14 @@
+-content_for :aside do
+  %section.tagcloud
+    %h1 Tags
+    %ul
+      %li jute
+      %li cotton
+      %li bag
+  %section.add_new
+    = button_to 'New Item', new_item_path, :method => :get
 %h1 Listing items
-
-%ul
+%ul.items
   - @items.each do |item|
     = link_to item do
       %li.item
@@ -11,5 +19,3 @@
           = button_to 'Edit', edit_item_path(item), :method => :get
           = button_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
 .clear
-
-= button_to 'New Item', new_item_path, :method => :get

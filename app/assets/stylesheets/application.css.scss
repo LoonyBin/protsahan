@@ -7,3 +7,35 @@
 */
 @import "screen";
 @import "buttons";
+
+@import "compass/typography/lists/horizontal-list";
+nav>ul {
+  @include horizontal-list;
+}
+nav.user {
+  float: right;
+}
+
+@import "compass/typography/lists/inline-block-list";
+ul.items {
+  @include inline-block-list(1.5em);
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.item {
+  @include highlight(white);
+  margin: 1em;
+}
+.actions {
+  @include horizontal-list-container;
+  > form {
+    @include horizontal-list-item;
+  }
+}
+
+.page_title form.button_to {
+  @include float-right;
+}

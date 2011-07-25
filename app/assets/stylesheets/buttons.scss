@@ -28,7 +28,7 @@
   @include button-hover-colors;
   @include button-active-colors; }
 
-button {
+input[type=submit], button {
   // The +button-button mixin is just like the +anchor-button mixin, but for <button> elements.
   @include button-button(left);
   @include button-colors;
@@ -36,12 +36,12 @@ button {
   @include button-active-colors; }
 
 // We can change the colors for buttons of certain classes, etc.
-.button.positive, button.positive {
+.positive {
   color: #529214;
   @include button-hover-colors(#529214, #e6efc2, #c6d880);
   @include button-active-colors(white, #529214, #529214); }
 
-.button.negative, button.negative {
+.negative {
   color: #d12f19;
   @include button-hover-colors(#d12f19, #fbe3e4, #fbc2c4);
   @include button-active-colors(white, #d12f19, #d12f19); }

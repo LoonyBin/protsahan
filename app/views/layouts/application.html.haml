@@ -6,15 +6,25 @@
     = javascript_include_tag :application
     = csrf_meta_tags
   %body.bp
-    %header
-      %ul.user
-        - if current_user
-          %li= current_user.email
-          %li= link_to "Logout", session_path(:signout), :method => :delete
-        - else
-          %li= link_to "Register", new_user_path
-          %li= link_to "Login", new_session_path
-    - flash.each do |name, msg|
-      = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
-    = yield
+    %header.highlight
+      %nav.user
+        %ul
+          - if current_user
+            %li= current_user.email
+            %li= link_to "Logout", session_path(:signout), :method => :delete
+          - else
+            %li= link_to "Register", new_user_path
+            %li= link_to "Login", new_session_path
+      %hgroup.title
+        %h1 Protsahan: Encouragement Store
+      %hgroup.page_header
+        =yield :header
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+    %aside.highlight
+      =yield :aside
+    #main.highlight
+      = yield
+    %footer.highlight
+      =yield :footer
 
