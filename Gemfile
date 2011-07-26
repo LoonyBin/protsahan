@@ -6,7 +6,7 @@ gem 'rails', '3.1.0.rc4'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'haml-rails'
-gem 'compass'
+gem 'compass', :require => false
 gem 'simple_form'
 
 # Asset template engines
@@ -22,6 +22,7 @@ gem 'rmagick'
 gem 'fog'
 gem "carrierwave"
 
+gem 'hoptoad_notifier'
 
 group :test, :development do
   gem 'sqlite3'

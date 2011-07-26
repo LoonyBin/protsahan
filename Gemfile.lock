@@ -85,6 +85,9 @@ GEM
       railties (~> 3.0)
     has_scope (0.5.0)
     hike (1.1.0)
+    hoptoad_notifier (2.4.11)
+      activesupport
+      builder
     i18n (0.6.0)
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
@@ -202,6 +205,7 @@ DEPENDENCIES
   factory_girl_rails
   fog
   haml-rails
+  hoptoad_notifier
   inherited_resources
   jquery-rails
   paper_trail
