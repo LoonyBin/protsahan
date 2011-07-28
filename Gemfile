@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0.rc5'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -10,9 +10,11 @@ gem 'compass', :require => false
 gem 'simple_form'
 
 # Asset template engines
-gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
-gem 'uglifier'
+group :assets do
+  gem 'sass-rails', "~> 3.1.0.rc"
+  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'uglifier'
+end
 
 gem 'jquery-rails'
 
@@ -47,5 +49,6 @@ end
 # This is for heroku
 group :production do
   gem 'therubyracer-heroku',  '0.8.1.pre3'
+  gem 'thin'
   gem 'pg'
 end
