@@ -1,14 +1,15 @@
 require 'spec_helper'
 
 describe Item do
-  before(:each) do
-    @item = Factory.create(:item)
-    subject { @item }
-  end
+  let(:item) { create(:item) }
+  subject { item }
 
   it "should be audited" do
-    with_versioning { should have_many :versions}
+    with_versioning { should have_many :versions }
   end
 
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:price) }
+  it { should validate_numericality_of(:price) }
 end

@@ -30,7 +30,9 @@ GEM
       activesupport (= 3.1.0.rc5)
     activesupport (3.1.0.rc5)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (2.1.4)
+    bcrypt-ruby (2.1.4)
     bcrypt-ruby (2.1.4-x86-mingw32)
     builder (3.0.0)
     capybara (1.0.0)
@@ -42,7 +44,7 @@ GEM
       xpath (~> 0.1.4)
     carrierwave (0.5.6)
       activesupport (~> 3.0)
-    childprocess (0.1.9)
+    childprocess (0.2.0)
       ffi (~> 1.0.6)
     chunky_png (1.2.0)
     coffee-rails (3.1.0.rc.5)
@@ -60,29 +62,41 @@ GEM
       sass (~> 3.1)
     daemons (1.1.4)
     diff-lcs (1.1.2)
+    em-websocket (0.3.1)
+      addressable (>= 2.1.1)
+      eventmachine (>= 0.12.9)
     erubis (2.7.0)
     eventmachine (0.12.10)
     excon (0.6.5)
-    execjs (1.2.0)
+    execjs (1.2.1)
       multi_json (~> 1.0)
-    factory_girl (1.3.3)
+    factory_girl (2.0.2)
     factory_girl_generator (0.0.3)
-    factory_girl_rails (1.0.1)
-      factory_girl (~> 1.3)
+    factory_girl_rails (1.1.0)
+      factory_girl (~> 2.0.0)
       railties (>= 3.0.0)
+    ffi (1.0.9)
     ffi (1.0.9-x86-mingw32)
-    fog (0.9.0)
+    fog (0.10.0)
       builder
-      excon (~> 0.6.1)
-      formatador (>= 0.1.3)
-      json
+      excon (~> 0.6.5)
+      formatador (~> 0.2.0)
       mime-types
-      net-scp (>= 1.0.4)
-      net-ssh (>= 2.1.4)
-      nokogiri (>= 1.4.4)
+      multi_json (~> 1.0.3)
+      net-scp (~> 1.0.4)
+      net-ssh (~> 2.1.4)
+      nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.0)
     fssm (0.2.7)
+    guard (0.5.1)
+      thor (~> 0.14.6)
+    guard-livereload (0.2.0)
+      em-websocket (>= 0.2.0)
+      guard (>= 0.4.0)
+      json (>= 1.5.1)
+    guard-rspec (0.4.0)
+      guard (>= 0.4.0)
     haml (3.1.2)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -112,9 +126,11 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.1.4)
+    nokogiri (1.5.0)
     nokogiri (1.5.0-x86-mingw32)
-    paper_trail (2.2.8)
+    paper_trail (2.2.9)
       rails (~> 3)
+    pg (0.11.0)
     pg (0.11.0-x86-mingw32)
     polyglot (0.3.2)
     rack (1.3.2)
@@ -142,12 +158,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2)
-    rdoc (3.8)
-    remarkable (3.1.13)
-      rspec (>= 1.2.0)
-    remarkable_activerecord (3.1.13)
-      remarkable (~> 3.1.13)
-      rspec (>= 1.2.0)
+    rdoc (3.9)
     responders (0.6.4)
     rmagick (2.13.1)
     rspec (2.6.0)
@@ -165,8 +176,8 @@ GEM
       rspec (~> 2.6.0)
     ruby-hmac (0.4.0)
     rubyzip (0.9.4)
-    sass (3.1.4)
-    sass-rails (3.1.0.rc.4)
+    sass (3.1.5)
+    sass-rails (3.1.0.rc.5)
       actionpack (~> 3.1.0.rc1)
       railties (~> 3.1.0.rc1)
       sass (>= 3.1.4)
@@ -176,6 +187,7 @@ GEM
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    shoulda-matchers (1.0.0.beta3)
     simple_form (1.4.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -183,11 +195,16 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (!= 1.3.0, ~> 1.1)
-    sqlite3 (1.3.3-x86-mingw32)
+    sqlite3 (1.3.4)
+    sqlite3 (1.3.4-x86-mingw32)
     steak (2.0.0)
       capybara (>= 1.0.0)
       rspec-rails (>= 2.5.0)
     therubyracer-heroku (0.8.1.pre3)
+    thin (1.2.11)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thin (1.2.11-x86-mingw32)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -205,6 +222,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -213,8 +231,10 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0.rc)
   compass
   factory_girl_generator
-  factory_girl_rails
+  factory_girl_rails (~> 1.1)
   fog
+  guard-livereload
+  guard-rspec
   haml-rails
   hoptoad_notifier
   inherited_resources
@@ -222,11 +242,11 @@ DEPENDENCIES
   paper_trail
   pg
   rails (= 3.1.0.rc5)
-  remarkable_activerecord
   rmagick
   rspec
   rspec-rails
   sass-rails (~> 3.1.0.rc)
+  shoulda-matchers
   simple_form
   sqlite3
   steak
