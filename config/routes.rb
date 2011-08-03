@@ -1,4 +1,6 @@
 Protsahan::Application.routes.draw do
+  resources :orders
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :items

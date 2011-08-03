@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 describe <%= class_name %> do
-  before(:each) do
-    @<%= singular_name %> = Factory.create(:<%= singular_name %>)
-    subject { @<%= singular_name %> }
-  end
+  let(:<%= singular_name %>) { create(:<%= singular_name %>) }
+  subject { <%= singular_name %> }
 
   it "should be audited" do
     with_versioning { should have_many :versions}

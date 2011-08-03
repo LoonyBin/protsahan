@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @order.user
+%p
+  %b Item:
+  = @order.item
+%p
+  %b Quantity:
+  = @order.quantity
+
+= link_to 'Edit', edit_order_path(@order)
+\|
+= link_to 'Back', orders_path
