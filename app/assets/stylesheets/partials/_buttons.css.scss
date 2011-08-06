@@ -19,7 +19,7 @@
   // you can pass "left" or "right" to +anchor-button to float it in that direction
   // or you can pass no argument to leave it inline-block (cross browser safe!) within
   // the flow of your page.
-  @include anchor-button(left);
+  @include anchor-button();
   // All the button color mixins take 4 optional arguments:
   // font color, background color, border color, border highlight color
   // the first three default to constants set in blueprint/buttons.sass
@@ -30,7 +30,7 @@
 
 input[type=submit], button {
   // The +button-button mixin is just like the +anchor-button mixin, but for <button> elements.
-  @include button-button(left);
+  @include button-button();
   @include button-colors;
   @include button-hover-colors;
   @include button-active-colors; }

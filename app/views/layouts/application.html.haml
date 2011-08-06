@@ -12,12 +12,12 @@
         %ul
           - if current_user
             %li= current_user.email
-            %li= link_to "Logout", session_path(:signout), :method => :delete
+            %li= link_to "Logout", sign_out_path, :method => :delete
           - else
-            %li= link_to "Register", new_user_path
-            %li= link_to "Login", new_session_path
+            %li= link_to "Register", sign_up_path
+            %li= link_to "Login", sign_in_path
       %hgroup.title
-        %h1 Protsahan: Encouragement Store
+        %h1= link_to "Protsahan: Encouragement Store", root_path
       %hgroup.page_header
         =yield :header
         - flash.each do |name, msg|

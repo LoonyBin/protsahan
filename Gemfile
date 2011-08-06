@@ -23,11 +23,14 @@ gem 'inherited_resources'
 gem 'rmagick'
 gem 'fog'
 gem 'carrierwave'
+gem 'clearance'
 
 gem 'hoptoad_notifier'
 
 group :test, :development do
   gem 'sqlite3'
+
+  gem 'passenger'
 
   gem 'rspec'
   gem 'rspec-rails'
