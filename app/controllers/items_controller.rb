@@ -1,3 +1,3 @@
 class ItemsController < InheritedResources::Base
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize_admin, :except => [:index, :show]
 end

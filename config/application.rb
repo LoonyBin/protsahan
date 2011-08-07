@@ -15,10 +15,10 @@ module Protsahan
       g.test_framework  :rspec,
                         :fixture          => true,
                         :helper_specs     => false,
-                        :controller_specs => false,
+                        :controller_specs => true,
                         :view_specs       => false
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
-      g.integration_tool :steak
+      #g.integration_tool :steak
       g.helper :rspec
       g.stylesheets false
     end

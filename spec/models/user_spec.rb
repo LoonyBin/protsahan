@@ -26,6 +26,6 @@ describe User do
     let(:user) { create(:user, :role => 'admin') }
     subject {user}
 
-    pending { subject.admin?.should be_true }
+    its(:is_admin?) { should be_true }
   end
 end

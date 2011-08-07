@@ -29,18 +29,19 @@ gem 'hoptoad_notifier'
 
 group :test, :development do
   gem 'sqlite3'
-
   gem 'passenger'
 
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'spork', '~> 0.9.0.rc'
   gem 'steak'
   gem 'capybara'
   gem 'factory_girl_rails', '~> 1.1'
   gem 'factory_girl_generator'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'guard-spork'
 end
 # Use unicorn as the web server
 # gem 'unicorn'

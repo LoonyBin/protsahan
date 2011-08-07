@@ -1,6 +1,14 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
+guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('spec/spec_helper.rb')
+end
+
 guard 'livereload' do
   watch(%r{app/.+\.(erb|haml)})
   watch(%r{app/helpers/.+\.rb})
@@ -10,7 +18,7 @@ guard 'livereload' do
   watch(%r{config/locales/.+\.yml})
 end
 
-guard 'rspec', :version => 2 do
+guard 'rspec', :version => 2, :cli => "--drb" do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -27,5 +35,5 @@ guard 'rspec', :version => 2 do
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
   # Factory Girl
-  watch(%r{^spec/factories/(.+)_factory\.rb$})        { |m| "spec/models/#{m[1]}_spec.rb" }
+  watch(%r{^spec/factories/(.+)_factory\.rb$})        { |m| "spec/models/#{m[1].singularize}_spec.rb" }
 end

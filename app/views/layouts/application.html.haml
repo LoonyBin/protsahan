@@ -10,7 +10,7 @@
     %header.highlight
       %nav.user
         %ul
-          - if current_user
+          - if signed_in?
             %li= current_user.email
             %li= link_to "Logout", sign_out_path, :method => :delete
           - else
