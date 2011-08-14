@@ -31,6 +31,9 @@ group :test, :development do
   gem 'sqlite3'
   gem 'passenger'
 
+# To use debugger
+  gem 'ruby-debug19', :require => 'ruby-debug'
+
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -48,9 +51,6 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 # This is for heroku
 group :production do
