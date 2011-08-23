@@ -2,9 +2,10 @@
 
 %h1#name= @item.name
 %h2#price &#8377; #{@item.price}
-= button_to 'Edit', edit_item_path(@item), :method => :get
-\|
-= link_to "Back", :back
+.actions
+  = button_to 'Order', new_item_order_path(@item), :method => :get
+  = button_to 'Edit', edit_item_path(@item), :method => :get
+  = link_to "Back", :back
 
 #image= image_tag @item.image_url if @item.image?
 #description= @item.description

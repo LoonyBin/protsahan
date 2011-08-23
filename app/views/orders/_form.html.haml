@@ -1,9 +1,7 @@
-= simple_form_for(@order) do |f|
+= simple_form_for([parent, @order]) do |f|
   = f.error_notification
 
   .inputs
-    = f.association :user
-    = f.association :item
     = f.input :quantity
 
   .actions

@@ -24,6 +24,7 @@ gem 'rmagick'
 gem 'fog'
 gem 'carrierwave'
 gem 'clearance'
+gem 'cancan'
 
 gem 'hoptoad_notifier'
 

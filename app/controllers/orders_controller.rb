@@ -1,9 +1,12 @@
 class OrdersController < InheritedResources::Base
-  before_filter :authorize
-  before_filter :authorize_admin, :only => [:edit, :update, :destroy]
-
+  load_and_authorize_resource
+  belongs_to :item, :optional => true
+  def create
+    create! {orders_url}
+  end
 protected
-  def begin_of_association_chain
-    current_user unless current_user.is_admin?
+  def create_resource(object)
+    object.user = current_user
+    object.save
   end
 end

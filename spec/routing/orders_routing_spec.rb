@@ -8,7 +8,7 @@ describe OrdersController do
     end
 
     it "routes to #new" do
-      get("/orders/new").should route_to("orders#new")
+      get("/items/1/orders/new").should route_to("orders#new", :item_id => "1")
     end
 
     it "routes to #show" do
@@ -20,7 +20,7 @@ describe OrdersController do
     end
 
     it "routes to #create" do
-      post("/orders").should route_to("orders#create")
+      post("/items/1/orders").should route_to("orders#create", :item_id => "1")
     end
 
     it "routes to #update" do

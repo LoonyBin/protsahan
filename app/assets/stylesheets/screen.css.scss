@@ -37,7 +37,7 @@ ul.items {
 }
 .actions {
   @include horizontal-list-container;
-  > form {
+  > .button_to {
     @include horizontal-list-item;
   }
 }

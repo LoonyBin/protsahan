@@ -1,7 +1,9 @@
 Protsahan::Application.routes.draw do
 
-  resources :items
-  resources :orders
+  resources :items do
+    resources :orders, :only => [:new, :create]
+  end
+  resources :orders, :except => [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

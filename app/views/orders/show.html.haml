@@ -1,11 +1,12 @@
 %p#notice= notice
 
 %p
-  %b User:
-  = @order.user
+  - if current_user.is_admin?
+    %b User:
+    = @order.user.email
 %p
   %b Item:
-  = @order.item
+  = @order.item.name
 %p
   %b Quantity:
   = @order.quantity

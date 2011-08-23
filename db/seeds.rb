@@ -8,7 +8,8 @@
 User.create([
   {
     email: 'admin@localhost.lo',
-    password: 'supersecret'
+    password: 'supersecret',
+    role: 'admin'
   },
   {
     email: 'admin@loonyb.in',

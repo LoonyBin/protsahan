@@ -1,23 +1,21 @@
 %h1 Listing orders
 
 %table
-  %tr
-    %th User
-    %th Item
-    %th Quantity
-    %th
-    %th
-    %th
-
-  - @orders.each do |order|
+  %thead
     %tr
-      %td= order.user
-      %td= order.item
-      %td= order.quantity
-      %td= link_to 'Show', order
-      %td= link_to 'Edit', edit_order_path(order)
-      %td= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Order', new_order_path
+      -if current_user.is_admin?
+        %th User
+      %th Item
+      %th Quantity
+      %th
+  %tbody  
+    - @orders.each do |order|
+      %tr
+        -if current_user.is_admin?
+          %td= order.user.email
+        %td= order.item.name
+        %td= order.quantity
+        %td.actions
+          = link_to 'Show', order
+          = button_to 'Edit', edit_order_path(order), :method => :get
+          = button_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete

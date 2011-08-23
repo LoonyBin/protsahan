@@ -5,8 +5,9 @@
       %li jute
       %li cotton
       %li bag
-  %section.add_new
-    = button_to 'New Item', new_item_path, :method => :get
+  - if can? :create, Item
+    %section.add_new
+      = button_to 'New Item', new_item_path, :method => :get
 %h1 Listing items
 %ul.items
   - @items.each do |item|
@@ -16,6 +17,9 @@
         .name= item.name
         .price &#8377; #{item.price}
         .actions
-          = button_to 'Edit', edit_item_path(item), :method => :get
-          = button_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
+          = button_to 'Order', new_item_order_path(item), :method => :get
+          - if can? :update, item
+            = button_to 'Edit', edit_item_path(item), :method => :get
+          - if can? :destroy, item
+            = button_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
 .clear
