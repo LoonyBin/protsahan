@@ -16,8 +16,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'aws-s3'
 gem 'jquery-rails'
 gem 'spree'
+gem 'spree_heroku', '1.0.0', :git => 'git://github.com/paxer/spree-heroku.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

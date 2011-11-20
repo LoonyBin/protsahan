@@ -1,0 +1,15 @@
+development:
+  bucket: protsahan-dev
+  access_key_id: AAAAAAAAAAAAAAAAAAA
+  secret_access_key: AJHKHJKKJHKHkjsdf+EuXQu5xvingQXY0M+gyYnFGqUJ
+
+test:
+  bucket: protsahan-test
+  access_key_id: AAAAAAAAAAAAAAAAAAA
+  secret_access_key: AJHKHJKKJHKHkjsdf+EuXQu5xvingQXY0M+gyYnFGqUJ
+
+production:
+  bucket: protsahan
+  access_key_id: AKIAIZWJYJCYL4KWDKZQ
+  secret_access_key: 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
+
