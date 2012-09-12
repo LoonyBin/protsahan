@@ -3,10 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node server",
+    "test": "mocha --require should --compilers coffee:coffee-script --colors"
   },
   "dependencies": {
     "express": "3.0.0rc4",
-    "jade": "*"
+    "jade": "*",
+    "connect-assets": "2.2.1",
+    "which": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*",
+    "mocha": "*",
+    "should": "*",
+    "request": "*",
+    "supervisor": "*",
+    "docco": "*"
   }
 }
