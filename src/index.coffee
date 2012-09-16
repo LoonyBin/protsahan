@@ -21,7 +21,10 @@ app.configure 'development', ->
 
 # Get root_path return index view
 app.get '/', (req, resp) ->
-  resp.render 'index', { title: 'Express'}
+  resp.render 'index'
+
+app.get '/pages/*', (req, resp) ->
+  resp.render 'pages/' + req.params[0]
 
 # Start Server
 http.createServer(app).listen app.get('port'), ->

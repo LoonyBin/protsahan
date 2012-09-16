@@ -27,9 +27,11 @@ app.configure('development', function() {
 });
 
 app.get('/', function(req, resp) {
-  return resp.render('index', {
-    title: 'Express'
-  });
+  return resp.render('index');
+});
+
+app.get('/pages/*', function(req, resp) {
+  return resp.render('pages/' + req.params[0]);
 });
 
 http.createServer(app).listen(app.get('port'), function() {

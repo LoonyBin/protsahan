@@ -1,16 +1,21 @@
 doctype 5
 html
   head
-    title= title
-    != css('bootstrap')
-    != css('responsive')
-    != css('app')
+    title
+      block title
+        | Protsahan India Foundation
+    block head
+      != css('bootstrap')
+      != css('responsive')
+      != css('app')
+      != js('jquery-1.8.1.min')
 
   body
     header
-      .page-header
-        h1 Protsahan
-          small Empowering women
+      block header
+        .page-header
+          h1 Protsahan
+            small Empowering women
     #body.container
       block content
     footer
