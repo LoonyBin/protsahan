@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .row
+    section.leader.span12.show-grid
+      h1= title
+    hr
+  .row
+    section.span12
+      p.
+        welcome to #{title}
