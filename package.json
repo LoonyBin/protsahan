@@ -11,6 +11,7 @@
     "test": "mocha --require should --compilers coffee:coffee-script --colors"
   },
   "dependencies": {
+    "coffee-script": "*",
     "express": "3.0.0rc4",
     "jade": "*",
     "less": "1.3.0",
@@ -18,7 +19,6 @@
     "which": "*"
   },
   "devDependencies": {
-    "coffee-script": "*",
     "mocha": "*",
     "should": "*",
     "request": "*",
