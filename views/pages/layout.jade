@@ -11,14 +11,47 @@ html
       != css('app')
       != js('jquery-1.8.1.min')
       != js('jquery.mousewheel.min')
+      != js('bootstrap-dropdown')
       != js('app')
 
   body
     header
       block header
-        .page-header
-          h1 Protsahan
-            small Empowering women
+        .navbar
+          .navbar-inner
+            .container
+
+              a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+
+              a.brand(href='/') Protsahan
+              p.navbar-text.pull-left  Empowering women
+
+              p.divider-vertical.pull-left
+
+              .nav-collapse
+                 ul.nav
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown') Projects
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='/pages/projects/educare') Educare
+                      li
+                        a(href='/pages/projects/stree') Stree
+                      li
+                        a(href='/pages/projects/artisan_honour') Artisan Honour
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown') About Us
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='/pages/about_us/organizational_profile') Organizational Profile
+                      li
+                        a(href='/pages/about_us/strategic_focus') Strategic Focus
+
     #body
       block content
     footer
