@@ -40,6 +40,7 @@
   }
 
   @column-width: 325px; //Make responsive
+  @column-gap: 30px;
 
   .leader {
     background-image: url('http://placehold.it/1170x500');
@@ -86,13 +87,26 @@
     -webkit-column-width: @column-width;
     -moz-column-width:    @column-width;
     column-width:         @column-width;
+
+    -webkit-column-gap:   @column-gap;
+    -moz-column-gap:      @column-gap;
+    column-gap:           @column-gap;
   //  width: @column-width;
     height: 100%;
   }
 
 }
-.about_us .leader {
-  background-image: url('/images/leader/about_us.jpg');
+.contact_us .leader {
+  background-image: url('/images/leader/contact_us.jpg');
+}
+.educare .leader {
+  background-image: url('/images/leader/educare.jpg');
+}
+.stree .leader {
+  background-image: url('/images/leader/stree.jpg');
+}
+.artisan_honour .leader {
+  background-image: url('/images/leader/artisan_honour.jpg');
 }
 .organizational_profile .leader {
   background-image: url('/images/leader/organizational_profile.jpg');
@@ -103,12 +117,12 @@
 .our_rationale .leader {
   background-image: url('/images/leader/our_rationale.jpg');
 }
-.artisan_honour .leader {
-  background-image: url('/images/leader/artisan_honour.jpg');
+.our_team .leader {
+  background-image: url('/images/leader/our_team.jpg');
 }
-.stree .leader {
-  background-image: url('/images/leader/stree.jpg');
+.work_culture .leader {
+  background-image: url('/images/leader/work_culture.jpg');
 }
-.educare .leader {
-  background-image: url('/images/leader/educare.jpg');
+.recognition_received .leader {
+  background-image: url('/images/leader/recognition_received.jpg');
 }
